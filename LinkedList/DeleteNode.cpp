@@ -26,6 +26,15 @@ Node* Input(){
     return head;
 
 }
+Node* DeleteHead(Node* head){
+    if(head == nullptr){
+        return head;
+    }
+    Node* tmp = head;
+    head = head->next;
+    delete tmp;
+    return head;
+}
 Node* Print(Node* head){
     while(head){
         cout<<head->data<<"->";
@@ -35,6 +44,7 @@ Node* Print(Node* head){
 }
 int main(){
     Node* head = Input();
+    head = DeleteHead(head);
     Print(head);
     return 0;
 }
